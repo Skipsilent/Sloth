@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src=" dist/scripts/Sloth-0.0.3.js"></script>
+    </head>
+<style>
+/* http://Supermen.coding.me/CDN/v-0.0.3/dist/scripts/Sloth-0.0.3.min.js */
+    li{
+        width: 500px;
+        float: left;
+        margin: 0;
+    }
+    div{
+        width: 500px;
+        height: 200px;
+        overflow: hidden;
+        margin:0 auto;
+    }
+    div ul{
+       height:200px;
+       list-style: none;      
+       padding: 0;  
+       position: relative;
+    }
+    .php span{
+        background: #ccc;
+        width: 40px;
+        height: 40px;
+        display: block;
+        float: left;
+    }
+    .php span.switch-active{
+        background: #000;
+    }
+    .php{
+z-index: 100;
+    }
+    .sync{
+        width: 100%;
+    }
+    .sync_div{
+        position: absolute;
+        top: 0;left: 0;
+    }
+    .img{
+        width: 100%;
+        height: 100%;
+    }
+    .sync li{
+        opacity: 0;
+        position: relative;
+    }
+    .sync{
+        transition: all 1s;
+        background:#aaa;
+    }
+    .sync_div .z {
+        background:#ff0;
+    }
+    .sync_div .x {
+        background:#f0f;
+    }
+    .sync_div .c {
+        background:#00f;
+    }
+    .sync_div .v {
+        background:#0ff;
+    }
+    .sync_div .b {
+        background:#0af;
+    }
+    .sync_div .n {
+        background:#aaddaa;
+    }
+</style>
+<body>
+    <input type="text" class="SlothTel" errmsg='手机号码格式错误' nullMsg='请填写手机号'>
+     <input type="text" class="SlothMail" errmsg='邮箱格式错误' nullMsg='请填写邮箱'>
+     <input type="text" class="SlothNum" errmsg='请输入正整数'  nullMsg='请填'>
+     <textarea name="" id="" class="SlothNull" nullmsg='请输入点内容' cols="30" rows="10"></textarea>
+  <div style='position:relative;'>
+     
+     <div class="sync_div d1">
+         <ul class="sync">
+        <li style="background:#aaa;"></li>
+        <li style="background:#ff0;"></li>
+        <li style="background:#000;"></li>
+        <li style="background:#bb0;"></li>
+        <li style="background:#eee;"></li>
+        <li style="background:#ddd;"></li>
+      
+    </ul>
+     </div>
+     <ul class="slide s1">
+        <li style="">1111111111111111asdasdasd</li>
+        <li style="">22222222222asdasdasd</li>
+        <li style="">33333333333asdasdasd</li>
+        <li style="">4444444444asdasdasd</li>
+        <li style="">555555555555asdasdasd</li>
+        <li style="">6666666666asdasdasd</li>
+      
+    </ul>
+  </div>
+  <span class="php p1">
+      
+  </span>
+  <div style='position:relative;'>
+     
+     <div class="sync_div d2">
+         <ul class="sync">
+        <li style="background:#aaa;"></li>
+        <li style="background:#ff0;"></li>
+        <li style="background:#000;"></li>
+        <li style="background:#bb0;"></li>
+        <li style="background:#eee;"></li>
+        <li style="background:#ddd;"></li>
+      
+    </ul>
+     </div>
+     <ul class="slide s2">
+        <li style="">asdasdasd</li>
+        <li style="">asdasdasd</li>
+        <li style="">asdasdasd</li>
+        <li style="">asdasdasd</li>
+        <li style="">asdasdasd</li>
+        <li style="">asdasdasd</li>
+      
+    </ul>
+  </div>
+  <span class="php p2">
+      
+  </span>
+   <div style='position:relative;' class="xq-parallax" data-xq-dirctive=''  data-xq-addclass='aaaa'>
+     
+     <div class="sync_div d3">
+         <ul class="sync">
+        <li style="background:#aaa;"></li>
+        <li style="background:#ff0;"></li>
+        <li style="background:#000;"></li>
+        <li style="background:#bb0;"></li>
+        <li style="background:#eee;"></li>
+        <li style="background:#ddd;"></li>
+      
+    </ul>
+     </div>
+     <ul class="slide s3">
+        <li style="">1111asdasdasd</li>
+        <li style="">222asdasdasd</li>
+        <li style="">333asdasdasd</li>
+        <li style="">444asdasdasd</li>
+        <li style="">555asdasdasd</li>
+        <li style="">666asdasdasd</li>
+      
+    </ul>
+  </div>
+  <span class="php p3">
+      
+  </span>
+  <div class="img xq-parallax" data-xq-dirctive='vertical' data-xq-ratio=-1>
+      <img class="aaa" src="http://www.rainbowhouseclub.com/Imgs/4/635837448078828660_l_ban_about.jpg" alt="">
+  </div>
+  <div class="img2" style='background:url(http://www.rainbowhouseclub.com/Imgs/4/635837448078828660_l_ban_about.jpg);width:1000px;height:500px'></div>
+   <div class="img2" style='background:url(http://www.rainbowhouseclub.com/Imgs/4/635837448078828660_l_ban_about.jpg);width:1000px;height:500px'></div>
+  <img class="aaa showbigimg" width="500" src="http://www.rainbowhouseclub.com/Imgs/4/635837448078828660_l_ban_about.jpg" alt="">
+   <img class="aaa showbigimg" width="500" style='float:right' src="http://www.rainbowhouseclub.com/Imgs/4/635837448078828660_l_ban_about.jpg" alt="">
+    <img class="aaa showbigimg" width="500" src="http://www.rainbowhouseclub.com/Imgs/4/635837448078828660_l_ban_about.jpg" alt="">
+    <div class="img2" style='background:url(http://www.rainbowhouseclub.com/Imgs/4/635837448078828660_l_ban_about.jpg);width:1000px;height:500px'></div>
+     <div class="img2" style='background:url(http://www.rainbowhouseclub.com/Imgs/4/635837448078828660_l_ban_about.jpg);width:1000px;height:500px'></div>
+
+
+     <div class="img-continer">
+       <ul>
+         <li><img src="http://n.sinaimg.cn/mobileh5/20160623/qp_G-fxtmwei9121175.jpg" alt=""></li>
+         <li><img src="http://asearch.alicdn.com/bao/uploaded/i2/122680197614961631/TB2IR29mVXXXXa4XpXXXXXXXXXX_!!0-saturn_solar.jpg_170x170.jpg" alt=""></li>
+         <li><img src="http://n.sinaimg.cn/mobileh5/20160623/qp_G-fxtmwei9121175.jpg" alt=""></li>
+       </ul>
+     </div>
+ 
+  <script>
+ Sloth.slide({
+    obj:'ul.s1',
+    radio:'.p1',
+    autotime:2000,
+    mediascreenwidth:false,
+    syncClassOnOff:true,
+    syncClass:{
+        obj:'ul.sync',
+        classs:['z','x','c','v','b','n']
+    },
+    callback:function  (i) {
+  
+    }
+    
+  }); Sloth.slide({
+    obj:'.img-continer ul',
+    autotime:2000,
+    autoHeight:'auto'
+  });
+  // XQ.slide({
+  //   obj:'ul.s2',
+  //   radio:'.p2',
+  //   way:'fade',
+  //   autotime:4000,
+  //   syncClassOnOff:true,
+  //   syncClass:{
+  //       obj:'.d2 ul.sync',
+  //       classs:['z','x','c','v','b','n']
+  //   }
+  // });
+  //   XQ.slide({
+  //   obj:'ul.s3',
+  //   radio:'.p3',
+  //   way:'upDown',
+  //   autotime:4000,
+  //   syncClassOnOff:true,
+  //   syncClass:{
+  //       obj:'.d3 ul.sync',
+  //       classs:['z','x','c','v','b','n']
+  //   }
+  //});
+  Sloth.amouse('div.img');
+  Sloth.amouse('div.img',{moveChild:'.aaa',ratio:510});
+  Sloth.amouse('div.img2');
+  // $('.img').parallax({
+  //   min_top:10,
+  //   max_top:1000,
+  //   direct:'up'
+  // });
+  Sloth.Parallax();
+  var  Lq=new Sloth.Fun;
+Lq.showImg();
+var ck=Lq.formTest();
+console.log(Lq);
+Lq.alert('asdasd')
+  </script>
+</body>
+</html>
+

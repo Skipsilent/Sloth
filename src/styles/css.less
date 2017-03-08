@@ -1,0 +1,260 @@
+*{word-wrap:break-word}
+html,body,h1,h2,h3,h4,h5,h6,hr,p,iframe,dl,dt,dd,ul,ol,li,pre,form,button,input,textarea,th,td,fieldset{margin:0;padding:0}
+ul,ol,dl{list-style-type:none}
+html,body{*position:static}
+html{font-family: sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:400}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+input,button{overflow: visible;vertical-align:middle;outline:none}
+body,th,td,button,input,select,textarea{font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif,"WenQuanYi Micro Hei","\5B8B\4F53";font-size:12px;color: #333;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing:grayscale}
+body{line-height:1.6}
+h1,h2,h3,h4,h5,h6{font-size:100%}
+a,area{outline:none;blr:~"expression(this.onFocus=this.blur())"}
+a{text-decoration:none;cursor: pointer}
+a:hover{text-decoration:underline;outline:none}
+a.ie6:hover{zoom:1}
+a:focus{outline:none}
+a:hover,a:active{outline:none}:focus{outline:none}
+sub,sup{vertical-align:baseline}
+button,input[type="button"], input[type="submit"] {line-height:normal !important;}
+/*img*/
+img{border:0;vertical-align:middle}
+a img,img{-ms-interpolation-mode:bicubic}
+.img-responsive{max-width: 100%;height: auto}
+ 
+/*IE下a:hover 背景闪烁*/
+*html{overflow:-moz-scrollbars-vertical;zoom:~'expression(function(ele){ele.style.zoom = "1";document.execCommand("BackgroundImageCache",false,true)}(this))'}
+/*HTML5 reset*/
+header,footer,section,aside,details,menu,article,section,nav,address,hgroup,figure,figcaption,legend{display:block;margin:0;padding:0}time{display:inline}
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+audio:not([controls]){display:none}
+legend{width:100%;margin-bottom:20px;font-size:21px;line-height:40px;border:0;border-bottom:1px solid #e5e5e5}
+legend small{font-size:15px;color:#999}
+svg:not(:root) {overflow: hidden}
+fieldset {border-width:0;padding: 0.35em 0.625em 0.75em;margin: 0 2px;border: 1px solid #c0c0c0}
+input[type="number"]::-webkit-inner-spin-button,input[type="number"]::-webkit-outer-spin-button {height: auto}
+input[type="search"] {-webkit-appearance: textfield; /* 1 */-moz-box-sizing: content-box;-webkit-box-sizing: content-box; /* 2 */box-sizing: content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {-webkit-appearance: none}
+/* Clear Fix */
+.clearfix:after,.xrow:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+.clearfix,.xrow{ zoom:1;}
+/*init_end*/
+.overflow{
+  overflow:hidden;
+}
+.xrow *[class*="xcol"]{
+  float: left;
+}
+*[class*="xcol"]{
+  display: inline-block;
+}
+/*less开始*/
+@screen-xs-max-h:480px;//手机屏幕
+@screen-xs-max:767px;//手机屏幕
+@screen-sm-min:768px;//小屏幕
+@screen-sm-max:991px;//小屏幕
+@screen-md-min:992px;//中屏幕
+@screen-md-max:1199px;//中屏幕
+@screen-lg-min:1200px;//大屏幕
+@gutter:20;//槽距
+@cols:12;//列数
+/*生成网格系统*/
+.creat-xcol(@n:@cols, @i: 1,@name:col,@style:width) when (@i =< @n) {
+  .@{name}-@{i} {
+    @{style}: (@i * 100% / @n);
+  }
+  .creat-xcol(@n, (@i + 1),@name:@name,@style:@style);
+}
+.creat-xcol(@cols,1,xspan);
+.creat-xcol(@cols,1,xspan-offset,margin-left);
+/*尺寸分类*/
+/* 大屏幕 -lg-*/
+  [class*="visible-sm"],[class*="visible-md"],[class*="visible-xs"],[class*="visible-lg"]{
+    display: none;
+  }
+  .visivlie-(@name:lg){
+     .visible-@{name}{
+      display: inherit;
+    } 
+     .visible-@{name}-block{
+      display: block;
+   }
+   .visible-@{name}-inline{
+      display: inline;
+   }
+   .visible-@{name}-inline-block{
+      display: inline-block;
+   }
+  }
+  .hidden-(@name:lg){
+    .hidden0-@{name}{
+      display: block;
+    }
+  }
+@media (min-width: @screen-lg-min) {
+  .creat-xcol(@cols,1,xcol-lg);
+  .creat-xcol(@cols,1,xcol-lg-offset,margin-left);
+  .hidden-(lg);
+  .visivlie-(lg);
+  [class*="xcol-"] .gutter{
+  padding-left: @gutter+0px;
+  padding-right: @gutter+0px;
+}
+}
+/* 中屏幕 -md-*/
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+  .creat-xcol(@cols,1,xcol-md);
+  .creat-xcol(@cols,1,xcol-md-offset,margin-left);
+  .hidden-(md);
+  .visivlie-(md);
+  [class*="xcol-"] .gutter{
+  padding-left: @gutter*3/4+0px;
+  padding-right: @gutter*3/4+0px;
+}
+  }
+/* 平板电脑和小屏电脑之间的分辨率 -sm-*/
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+  .creat-xcol(@cols,1,xcol-sm);
+  .creat-xcol(@cols,1,xcol-sm-offset,margin-left);
+  .hidden-(sm);
+  .visivlie-(sm);
+    [class*="xcol-"] .gutter{
+  padding-left: @gutter*2/4+0px;
+  padding-right: @gutter*2/4+0px;
+}
+  }
+
+/* 横向放置的手机和竖向放置的平板之间的分辨率 -xs-*/
+@media (max-width: @screen-xs-max) {
+  .creat-xcol(@cols,1,xcol-xs);
+  .creat-xcol(@cols,1,xcol-xs-offset,margin-left);
+  .hidden-(xs);
+  .visivlie-(xs);
+    [class*="xcol-"] .gutter{
+    padding-left: @gutter*1/4+0px;
+    padding-right: @gutter*1/4+0px;
+   }
+  }
+/* 横向放置的手机及分辨率更小的设备 */
+@media (max-width: @screen-xs-max-h) { 
+}
+
+/*字号生成*/
+.creat-font-size(@maxSize:48,@dan:px,@stepSize:2,@i:10) when (@i<=@maxSize){
+  .f@{i}{
+    font-size: @i+0px;
+  }
+  .creat-font-size(@maxSize:@maxSize,@i:(@i + @stepSize));
+}
+.creat-font-size;
+/*FLEXBOX*/
+.flex{
+  display: flex;
+  .flex-item{
+    
+  }
+}
+.maxw1000{
+  max-width: 1000px;
+}
+.block-center{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.block,.db{
+  display: block;
+}
+.dn{
+  display: none;
+}
+.dib{
+  display: inline-block;
+}
+.di{
+  display: inline;
+}
+.margin,.block-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+.vh{
+  visibility: hidden;
+}
+.w1000{
+  width: 1000px;
+}
+.minw1000{
+  min-width: 1000px;
+}
+.w100{
+  width: 100%;
+}
+.h100{
+  height: 100%;
+}
+.wh100{
+  width: 100%;
+  height: 100%;
+}
+.pos-r{
+  position: relative;
+}
+.pos-a{
+  position: absolute;
+}
+.pos-f{
+  position: fixed;
+}
+.t0{
+  top: 0;
+}
+.l0{
+  left: 0;
+}
+.tl0{
+  top: 0;
+  left: 0;
+}
+.tr0{
+  top: 0;
+  right: 0;
+}
+.xright{
+  float: right;
+}
+.xleft{
+  float: left;
+}
+.f-bold,.fb{
+  font-weight: bold;
+}
+.f-normal,.fn{
+  font-weight: normal;
+  font-style: normal;
+}
+.uppercase,.text-upper{
+  text-transform: uppercase;
+}
+.text-center{
+  text-align: center;
+}
+.text-right{
+  text-align: right;
+}
+.text-left{
+  text-align: left;
+}
+.br3{
+      border-radius: 3px;
+}
+.bn{
+  background: none!important;
+}
+/* 公共css结束 */

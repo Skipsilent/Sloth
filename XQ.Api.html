@@ -1,0 +1,408 @@
+<meta charset="UTF-8">
+<pre>
+XQ v-1.0.1 API---需要jq库
+1、XQ.autoWidth(a,b)
+    据子集自动宽度a是父级，b是子集
+
+2、XQ.WinW 
+    窗体宽度
+
+3、XQ.WinH 
+    窗体高度
+
+4、XQ.autoWinW（a）
+    自动为窗口宽度 ~a是元素
+
+5、XQ.XQ.autoWinH （a）
+       自动为窗口高度~ a是元素
+
+6、XQ.goTop（a,b）
+    滚动到设定的距离显示回到顶部按钮，点击回到顶部~a是元素，b是距离比
+
+7、XQ.scrollShow（a,b）
+    滚动到某个文职显示元素~a是元素，b是距离比；
+
+8、XQ.scrollFixed(a,b,c)
+    滚动距离来判定添加减少类型~a是元素，b是距离；c是变换的类名
+
+9、XQ.scrollTop
+    获取滚动条高度
+
+10、XQ.banFade (a,b,c,d)
+    banner渐隐渐现 ~ a是父级；b是子集；c是间隔，d是从几个开始（仅仅是js不包含样式）;
+
+11、XQ.setCookie (a,b,c,d,)
+    简单的写入cookie ~a是名称；b是值，c是存活时间,d是时间类型（day）
+
+12、XQ.getCookie（a）
+    简单获取cookie~a是名称;
+
+13、XQ.removeCookie（a）
+    简单移除cookie~a是名称
+
+14、XQ.banSwipt(a, b, c, d, dd, e)
+    简单的banner向上移动~a=运行的父级，b=运行标签，c=间隔时间（ms），d=父级高度,dd=滚动误差,e=回调函数
+
+15、XQ.clickShow (a, b, c, d)
+    点击显示隐藏~a是点击显示按钮，b是点击隐藏按钮，c是执行元素(数组形式)，d是回调函数
+
+16、XQ.moborpc()
+    判断是否是移动端：true是移动端；
+
+17、XQ.timeAuto(a,b);
+    延时执行，并且重复执行，时间大于3000秒后停止执行~a是回调函数，b是时间间隔默认为300；
+
+18、XQ.download（a）
+    当所有资源都OK后执行；~a是回调函数；
+
+19、XQ.slideItem （obj, options）
+    banner滚动一=>obj是滚动元素;options是配置文档内有函数：
+            autoplay: false, //是否自动播放
+            times: 3000, //自动播放间隔时间
+            hoverstop: true, //鼠标悬浮停留
+            flag: null, //
+            container: null, //slide容器的类名
+            slide: null, //滚动的类名
+            item: null, //子集的类名
+            itemindex:3,//滚动数量
+            media: false, //是否在什么尺寸进行地洞滚动；
+            min_width: 0, //滚动失效的最小尺寸；
+            next: null, //下一个按钮的类名
+            prev: null //前一个按钮的类名
+
+20、XQ.switchOver （obj, options）
+        点击切换列表~obj是一个字符串，多个元素以逗号“,options是配置项：
+                classs: 'dq', //切换当前的选中状态的class
+                switchs: false, //是否切换相应的内容
+                obj2: false, //切换的内容/可以是其父级的类、id，按照索引值进行切换，或者是数组(类名或id组成)，按照索引值对应数组进行切换
+                call: function() {} //你懂得...
+
+21、XQ.popup （option）
+        弹出框~options是配置项：
+            obj: '', //点击
+            popup_zc: '', //弹出遮层
+            popup: '', //弹出框
+            closes: '', //关闭按钮
+            mobile: true, //手机上执行
+            ways: 'fade', //出现方式可以是fade可以是左右上下
+            num: 0, //若是左右上下那就输入相应数值
+            showbefore: function() {
+                return true
+            }, //打开前执行...
+            showafter: function() {}, //打开后执行...
+            closebefore: function() {
+                return true
+            }, //关闭后执行...
+            closeafter: function() {}, //关闭后执行...
+            call: function() {}
+
+22、XQ.trim（a）
+        去除空格 ~a是字符串
+
+23、XQ.placeholer()
+        判断是否支持placeholer
+
+24、XQ.autoSlide (options)
+        自动生成导航小点点~options是配置项：
+            obj: '', //自动生成导航点点的父级元素，
+            obj_ul: '', //自动生成的个数父级；
+            obj_class: 'switch', //点点class
+            obj_class_active: 'switch-active', //点点class
+            obj_code: '' //点点的代码
+
+25、XQ.itwidth(a)
+        一个元素的宽度:~a是元素
+
+26、XQ.slide (options)
+        banner滚动二~配置项：
+                obj: '', //滚动元素
+        // item:'',//子集的类名
+        way:'upDown',//转变形式 有fade upDown
+        radio: null, //分页符==俗称小点点的父级
+        next: null, //下一个按钮的类名
+        prev: null, //前一个按钮的类名
+        minitem: null,//最小个数
+        parent: 'body',//需要传一个父级元素，当一个页面同时有两种共同滚动时；
+        autotime: 5000, //自动播放时间
+        ways: 'linear', //动画效果；
+        fullScreen: false, //整屏显示 整屏显示 宽度是窗口宽度，高度为窗口高度
+        autoHeight: 0,//自动获取高度 0 为自动获取父级高度
+        mediascreenwidth: false, //响应式的宽度,true时为窗口宽度；false为父级的父级宽度；fullScreen为true,默认为ture
+        mediashow: null, //响应式方案,特大，大，中，小屏显示个数[3,3,2,1],
+        itemshow: 0, //非响应式方案，显示个数,与mediashow不能同时存在，同时存在一响应式为准
+        //size: false, //true是需要自动获取，也就是false是自定义尺寸 
+        hoverstop: false,
+        parallax: false,
+        time: 800, //动画时间
+        fortime: 0,//动画前的时间
+        radio_item: 'switch', //分页符==俗称小点点
+        radio_item_active: 'switch-active', //分页符==俗称小点点
+        radio_item_code: null,///小点点代码
+        syncSlideOnOff: false,//同步显示的开关
+        syncSlide:{
+            way: 'fade',//连同变换的方式
+            durTime:600,//变化单个时间
+            delayTime:0,//延迟时间
+            width:null,
+            height:null,
+            obj: null//连同主要对象
+        },
+        syncClassOnOff:false,//同步变化class的开关
+        syncClass:{
+            obj:null,
+            classs:[]
+        },//同步变化class的开关
+        call: function () { }
+                
+                
+            此方法有动画在需要动画上元素上添加parallax为true  元素上添加 
+                data-x  x方向动的范围；
+                data-opacity  透明度
+                data-y  y方向动的范围
+                data-delay  延迟时间
+
+
+                例子：
+                    
+               &lt; div class="modul modul-banner-3 banner-container w100"&gt;
+                   &lt; div class="banner-ul-2 swiper-container pos-r"&gt;
+                       &lt; ul class="swiper-wrapper"&gt;
+                           &lt; li class="swiper-slide pos-r" style="background:url()"&gt;
+                               &lt; div class="img pos-a"&gt;
+                                   &lt; img src="../resource/images/movie-banner.jpg" alt="" /&gt;               
+                               &lt; /div&gt;
+                               &lt; div class="w1000 margin pos-r"&gt;
+                                   &lt; div class="row"&gt;
+                                       &lt; div class="col-md-12 col-sm-12 col-xs-12 text-center"&gt;
+                                           &lt; p data-delay='0s' data-opacity='0'  data-y=0.3 &gt;
+                                               &lt; img src="../resource/images/movie-banner-img-1.png" alt="" /&gt;               
+                                           &lt; /p&gt;
+                                       &lt; /div&gt;
+                                   &lt; /div&gt;
+                               &lt; /div&gt;
+                           &lt; /li&gt;
+                       &lt; /ul&gt;
+                       &lt; span class="pos-a next rounded but iconfont icon-right"&gt;&it;/span&gt;
+                       &lt; span class="pos-a prev but rounded iconfont icon-left"&gt;&it;/span&gt;
+                       &lt; div class="ppp"&gt;&it;/div&gt;
+                   &lt; /div&gt;
+               &lt; /div&gt;
+            XQ.slide({ //第三版banner
+                    obj: '.modul-banner-3 .banner-ul-2 > ul',
+                    fortime:400,
+                    autotime: 000,
+                    next: '.banner-ul-2 .next',
+                    radio:'.modul-banner-3  .ppp',
+                    size: true,
+                    prev: '.banner-ul-2 .prev'
+                });
+
+27、XQ.addcss (a)
+        在页面中增加css样式  ~a是样式
+
+28、XQ.getTime(a)
+        把时间戳转为日期年月日,返回一个对象：
+        {
+           "year":年,
+        "moon": 月 ,
+        "day": 日,
+        "hours": 时,
+        "mins":分，
+        "dayTime()":年月日,
+        "minTime()":年月日时间
+        "moonTime()":月日
+        }
+29、XQ.animated(a,b)
+        做页面特效用；a是总的元素；b是变换的类名；仅仅支持css3属性
+        在需要的元素上添加xq-animated类名；将针对所有类名xq-animated进行操作；
+         变量有：
+            data-xq-opacity 透明度
+            data-xq-x、data-xq-y、data-xq-z 三个方向的变化
+            data-xq-rotateX、data-xq-rotateY 、data-xq-rotateZ 三个方向的角度
+            data-xq-scale 缩放
+            data-xq-delay 延迟时间
+            data-xq-duration 持续时间
+
+
+            例子：
+
+
+30、XQ.transform(obj,options)
+        css变化的东西 主要是辅助其他程序 obj 是操作的元素；options 配置项
+                    opacity:1,
+                    perspective:1000,
+                    times:0,//
+                    rotateX:0,//X旋转
+                    rotateY:0,//Y旋转
+                    rotateZ:0,//Z旋转
+                    translateX:0,
+                    translateY:0,
+                    translateZ:0,
+                    boxshadow:'none',
+                    delay:0,
+                    duration:1,
+                    call:function  () {}
+
+31、XQ.amouse(obj,options);
+        鼠标跟随效果；
+        obj滑动元素
+        show:'ele',//可选值==bk,为bk时，子集可不选
+        moveChild: null,
+        ratio: 100,
+        x:0,
+        y:0,
+        call: function () { }
+
+Jq.XQ V-1.0.1 ||(c) 2016 
+Jq 扩展插件--基于JQuery
+ 
+1、    $().imgfall(setting)
+        （*）照片墙瀑布流，检测元素是否添加。配置项setting有：
+            itemsize:2,//排几列
+            pc:false, pc是否支持
+            mob:true  手机是否支持
+
+            例子：
+                $(obj).imgfall();
+
+2、  $().getDate(set)
+            页面滚动底部加载数据：配置：
+                height:200,//滚到那里触发事件
+                url:'',//加载链接
+                attribute:undefined,//父级属性值中获取参数
+                time:1500,//请求间隔
+                call:function(){}
+
+                例子：
+                $(obj).getDate({
+                      url:'list.htm?id=5',
+                      call:function(){
+                            console.log('数据请求完毕');
+                      }
+                })
+
+3、$().hoverTrans();
+        划过图片翻转：
+              hoverchild:null,//划过元素
+                child:null,//旋转元素
+                time:500,
+                image:null,图片
+                txt:null,文字
+                fade:false,//使用渐隐渐现；
+                boxshadow:'none'
+
+                结构是
+                  &lt;div class="row hoverTrans"  &gt;
+                   &lt;div class=" image-txt" data-wow-delay='0.6s'&gt;
+                               &lt;div class=" image-txt"&gt;
+                                       &lt;div class="abc-div pos-r"&gt;
+                                            &lt;img src="../resource/images/movie-img2.jpg" alt=""  class="img" /&gt;
+                                            &lt;div class="pos-a content wh100  txt pos-a tl0 one"&gt;
+                                                    &lt;div class="two"&gt;
+                                                            &lt;a class="three" href=""&gt;
+                                                            &lt;p class="title"&gt;《敢死队2》The Expendables2  &lt;/p&gt;
+                                                            &lt;p&gt;在此次第三部的故事中，巴尼（史泰龙饰）与克里斯马斯（杰森·斯坦森饰）领衔的敢死队将正面迎战昔日战友、如今&lt;/p&gt;
+                                                        &lt;/a&gt;    
+                                                    &lt;/div&gt;
+                                            &lt;/div&gt;      
+                                    &lt;/div&gt;
+                               &lt;/div&gt;
+                    &lt;/div&gt;
+               &lt;/div&gt;
+                $('.hoverTrans').hoverTrans({
+                        hoverchild:'.image-txt',
+                        child:'.abc-div',
+                        image:'.img',
+                        fade:true,
+                        txt:'.txt',
+                        time:700
+                    });
+   
+ 4、 $().fullimg ()
+        图片缩放，拉伸；配置：
+                classs: 'fullimg', //图片新建容器的类名
+                width: null, //图片缩放宽度，可以是'auto' 'window'
+                height: null, //图片缩放高度，可以是'auto' 'window'
+                fullScreen: false, //是否是整屏
+                resize: false, //是否随屏幕尺寸改变时改变 true 、false
+                align: 'center', //对齐方式,显示图片的 center、left、right
+                vertical: 'mid', //垂直对齐方式，显示图片的top mid  bottom
+                stretch: false, //是否拉伸
+                call: function() {
+                    return false
+                }
+            
+            例子：
+                需要仅显示 图片大小直接配置高宽位置
+            $('.modul-banner-2 .banner-ul-2 ul li .img img').fullimg({
+                    resize: true,
+                    fullScreen: true
+                })
+    
+5、$().alignBottom(opa)
+        居下显示；配置：
+            ways: 'margin-top', 方式
+            error: 0, 误差
+            call: function() {
+                return false
+            }
+
+6、$().alignMid(ops)
+        居中显示    
+        以下为该插件的属性及其默认值
+            borderbox: false,
+            ways: "margin-top", //
+            minwidth: 0, //执行范围当宽度小于某个值不执行；
+            error: 0, //误差
+            time: 300, //多次延时执行间隔
+            call: function() {
+                return false
+            }
+
+7、$().alignCenter(opa)
+        两边居中，配置
+            float: 'left',
+            children: false, //是否有子元素
+            position: false, //是否定位显示
+            error: 0, //误差
+            vertical: false, //是否上下居中
+            midways: 'margin-top', //要是上下居中的方式
+            call: function() {
+                return false
+                }
+
+8、    $().flexbox(oap)
+        平均分配子集的位置；
+                     width: false,
+            autowidth: true,
+            way: 'margin',
+            resize: false,
+            call: function() {
+                return false
+            }
+
+9、   $().imgLoad(ops)
+        time: 4000, ///等待载入时间，如果超过这个时间就直接执行回调  
+                callback: function() {} //默认回调  
+        图片加载完后执行   
+
+10、   $().parallax()
+        视滚动差效果
+             ratio: 0.5, //移动比例
+            direct: 'down', //移动方向-可选up/down/left/right/leftdown/leftup/rightup/rightdown
+            max_top: 600, //范围最大值
+            min_top: -1, //范围最小值
+            Screen:false,//是否已屏幕
+            maxScreen:2,//第几瓶结束
+            minScreen:1,//第几瓶开始
+            addclass:'',//达到最大小于最小是添加的class
+            call: function() {}
+    
+        例子：
+        $('.modul-nav-2').parallax({
+        ratio:0,
+        max_top:600,
+        addclass:'bk-nav'
+        })
+
+</pre>
